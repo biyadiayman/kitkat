@@ -40,24 +40,33 @@ function ChatRoom() {
 
   return (
     <>
-      <main>
-        {messages &&
-          messages.map((msg) => <ChatMessage key={msg.id} message={msg} />)}
+      <div className="flex flex-col ">
+        <div className="bg-indigo-400 flex flex-col text-white rounded-xl items-center">
+          <main className="flex flex-col items-end ">
+            {messages &&
+              messages.map((msg) => <ChatMessage key={msg.id} message={msg} />)}
 
-        <span ref={dummy}></span>
-      </main>
+            <span ref={dummy}></span>
+          </main>
 
-      <form onSubmit={sendMessage}>
-        <input
-          value={formValue}
-          onChange={(e) => setFormValue(e.target.value)}
-          placeholder="say something nice"
-        />
+          <form className="w-3/4 flex py-2" onSubmit={sendMessage}>
+            <input
+              value={formValue}
+              onChange={(e) => setFormValue(e.target.value)}
+              placeholder="Say hi!"
+              className="rounded-l-xl w-3/4 px-5 py-2 text-gray-900"
+            />
 
-        <button type="submit" disabled={!formValue}>
-          🕊️
-        </button>
-      </form>
+            <button
+              className="rounded-r-xl bg-indigo-500 text-white font-bold px-5 py-2"
+              type="submit"
+              disabled={!formValue}
+            >
+              Send
+            </button>
+          </form>
+        </div>
+      </div>
     </>
   );
 }
@@ -65,11 +74,14 @@ function ChatRoom() {
 function ChatMessage(props) {
   const { text, uid, photoURL } = props.message;
 
-  const messageClass = uid === auth.currentUser.uid ? "sent" : "received";
+  const messageClass =
+    uid === auth.currentUser.uid
+      ? "sent bg-yellow-200 text-gray-800 rounded-xl py-2 px-5 m-3"
+      : "received bg-gray-200 text-gray-800 rounded-xl py-2 px-5 m-3 self-start";
 
   return (
     <>
-      <div className={`message ${messageClass}`}>
+      <div className={`message  flex ${messageClass}`}>
         <p>{text}</p>
       </div>
     </>

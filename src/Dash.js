@@ -76,13 +76,20 @@ const SideBar = ({ handleLogout }) => {
 
 const Cards = () => {
   const heute = new Date();
+  const greeting =
+    heute.getHours() < 12
+      ? "Good morning"
+      : heute.getHours() < 18
+      ? "Good afternoon"
+      : "Good evening";
+
   return (
     <>
       <div className=" m-10">
         <h1 className=" flex text-center text-indigo-400 font-bold text-5xl w-full">
-          Welcome Mark!
+          {greeting} Truman!
         </h1>
-        {heute.toDateString("MM")}
+        <span className="text-xl">{heute.toDateString("MM")}</span>
       </div>
       <div className="">
         <div className="flex">
