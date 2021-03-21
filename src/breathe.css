@@ -11,12 +11,12 @@
 @keyframes orb_1 {
   from {
     transform: scale(1.5);
-    background: #8fb2e7;
+    background: #517cd8;
     animation-delay: 1s;
   }
   to {
     transform: scale(2.6);
-    background: #8fb2e7;
+    background: #517cd8;
   }
 }
 .orb_3 {
@@ -32,12 +32,12 @@
 @keyframes orb_3 {
   from {
     transform: scale(1.5);
-    background: #8fb2e7;
+    background: #517cd8;
     animation-delay: 1s;
   }
   to {
     transform: scale(2.3);
-    background: #8fb2e7;
+    background: #517cd8;
   }
 }
 
@@ -55,49 +55,50 @@
 @keyframes orb_2 {
   from {
     transform: scale(1.5);
-    background: #8fb2e7;
+    background: #517cd8;
     animation-delay: 1s;
   }
   to {
     transform: scale(2);
-    background: #8fb2e7;
+    background: #517cd8;
   }
 }
 
 .breathe:after {
   content: "";
+  color: white;
   animation: breathe 8s linear infinite;
 }
 
 @keyframes breathe {
   0% {
-    content: "IN";
+    content: "Inhale";
   }
   10% {
-    content: "IN";
+    content: "Inhale";
   }
   20% {
-    content: "IN";
+    content: "Inhale";
   }
   30% {
-    content: "IN";
+    content: "Inhale";
   }
   40% {
-    content: "IN";
+    content: "Inhale";
   }
   50% {
-    content: "IN";
+    content: "Inhale";
   }
   60% {
-    content: "OUT";
+    content: "Exhale";
   }
   70% {
-    content: "OUT";
+    content: "Exhale";
   }
   80% {
-    content: "OUT";
+    content: "Exhale";
   }
   90% {
-    content: "OUT";
+    content: "Exhale";
   }
 }
